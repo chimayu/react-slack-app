@@ -27,7 +27,7 @@ class Login extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
         if(this.isFormValid(this.state)){
-            this.setState({
+            this.setState({ 
                 errors: [],
                 loading: true
             })
@@ -35,12 +35,12 @@ class Login extends Component {
                 .auth()
                 .signInWithEmailAndPassword(this.state.email, this.state.password)
                 .then(signedInUser => {
-                    console.log(signedInUser)
+                    console.log(signedInUser);
                 })
                 .catch(err=>{
                     console.log(err);
                     this.setState({
-                        errors: this.setState.errors.concat(err),
+                        errors: this.state.errors.concat(err),
                         loading: false
                     })
                 })

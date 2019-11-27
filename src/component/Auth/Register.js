@@ -59,7 +59,7 @@ class Register extends Component{
                 .then((createdUser)=>{
                     createdUser.user.updateProfile({
                         displayName: this.state.username,
-                        photoURL: `https://gravatar.com/avatar/${md5(createdUser.user.email)}?d=identition`
+                        photoURL: `https://gravatar.com/avatar/${md5(createdUser.user.email)}?d=identicon`
                     })
                     .then(()=>{
                         this.saveUser(createdUser).then(()=>{
